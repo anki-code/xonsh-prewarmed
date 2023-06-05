@@ -1,6 +1,7 @@
 #!/bin/bash
 
 xonsh_run="xonsh"
+export XONSH_PREWARMED=1
 
 # Get xonsh reserved session.
 reserve_sess_id=$(screen -ls | grep -E 'xonsh_sess_reserve.*Detached' | awk -F '[.]|\t' '/[0-9]+\./{print $2}' | tail -n 1)
