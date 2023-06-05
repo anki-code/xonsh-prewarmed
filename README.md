@@ -1,5 +1,5 @@
 <p align="center">
-<b>xonsh-prewarmed</b> - is the script to run interactive <a href="https://xon.sh">xonsh</a> session in milliseconds using prewarmed <a href="https://www.gnu.org/software/screen/">GNU Screen</a> session from the background.
+<b>xonsh-prewarmed</b> is to run interactive <a href="https://xon.sh">xonsh</a> session in milliseconds using prewarmed <a href="https://www.gnu.org/software/screen/">GNU Screen</a> session from the background.
 </p>
 
 <p align="center">  
