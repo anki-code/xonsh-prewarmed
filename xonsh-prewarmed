@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Get the list of current xonsh sessions
+reserve_sess_cnt=$(screen -ls | grep -E 'xonsh_sess_reserve.*Detached' | wc -l)
+
+if [[ $reserve_sess_cnt -eq 0 ]]; then
+  screen -S xonsh_sess_reserve -d -m xonsh
+  screen -S xonsh_sess_reserve -d -m xonsh
+elif [[ $reserve_sess_cnt -eq 1 ]]; then
+  screen -S xonsh_sess_reserve -d -m xonsh
+fi
+
+reserve_sess_id=$(screen -ls | grep -E 'xonsh_sess_reserve.*Detached' | awk -F '[.]|\t' '/[0-9]+\./{print $2}' | head -n 1)
+
+# Rename reserve session to active session
+screen -S "$reserve_sess_id" -X sessionname xonsh_sess_active
+
+screen -r "$reserve_sess_id"
