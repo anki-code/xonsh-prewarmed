@@ -8,7 +8,7 @@ If you like the idea click ⭐ on the repo and and <a href="https://twitter.com/
 
 ## How it works
 
-On first run of `xonsh-screen-prewarmed` script it creates additional reserved xonsh session in [GNU Screen](https://www.gnu.org/software/screen/) manager in the background. On the next runs of the script it uses the reserved sessions and create new reserved sessions in the background. As result the speed of run the new interactive xonsh sessions are equal to the `screen` speed.
+On first run of `xonsh-screen-prewarmed` script it creates additional reserved xonsh session in [GNU Screen](https://www.gnu.org/software/screen/) manager in the background. On the next runs of the script it uses the reserved sessions and create new reserved sessions in the background. As result the speed of run the new interactive xonsh sessions is milliseconds.
 
 ## Installation
 
