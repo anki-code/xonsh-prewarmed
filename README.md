@@ -30,7 +30,7 @@ Feel free to add another session manager (e.g. `tmux`, `zellij`) by creating `xo
 ## Helpful GNU Screen cheatsheet
 
 ```xsh
-screen -ls  # list of all screen sessions (the session id is the number before dot)
+screen -ls  # list of all screen sessions (the sess_id is the number before dot)
 screen -r <sess_id>  # Jump to the `Detached` session by id
 screen -rd <sess_id>  # Jump to the `Attached` session by id
 # <Ctrl + a d>  # Detach current session (put it to the background)
