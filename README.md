@@ -27,9 +27,9 @@ chmod +x xonsh-screen-prewarmed
 
 Feel free to add another session manager (e.g. `tmux`, `zellij`) by creating `xonsh-<manager>-prewarmed`.
 
-## Helpful GNU Screen cheatsheet
+## GNU Screen cheatsheet
 
-Basics of GNU Screen:
+Basics:
 
 * When you run `screen` the new session will be started and your current terminal will be attached to it.
 * You can put the screen session to background by pressing `Ctrl + a` and then press `d`. After this your terminal will be detached from the session but the session will stay active in background.
