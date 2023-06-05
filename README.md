@@ -29,9 +29,8 @@ Feel free to add another session manager (e.g. `tmux`, `zellij`) by creating `xo
 
 ## Helpful GNU Screen cheatsheet
 
-```xsh
-screen -ls  # list of all screen sessions (the sess_id is the number before dot)
-screen -r <sess_id>  # Jump to the `Detached` session by id
-screen -rd <sess_id>  # Jump to the `Attached` session by id
-# <Ctrl + a d>  # Detach current session (put it to the background)
-```
+* When you run `screen` the new session will be started and your current terminal will be attached to it.
+* You can put the screen session to background by pressing `Ctrl + a` and then press `d`. After this your terminal will be detached from the session but the session will stay active in background.
+* Run `screen -ls` to get list of all sessions. The `sess_id` is the number before dot.
+* Run `screen -r <sess_id>` to attach `Detached` session to the current terminal.
+* Run `screen -rd <sess_id>` to detach the `Attached` session and attach to the current terminal.
