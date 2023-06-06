@@ -1,19 +1,22 @@
 #!/bin/bash
 
-xonsh_run="xonsh"
-export XONSH_PREWARMED=1
+xonsh_run=("xonsh" "-DXONSH_PREWARMED=1")
+
+get_reserve_sess_id() {
+    screen -ls | grep -E 'xonsh_sess_reserve.*Detached' | awk -F '[.]|\t' '/[0-9]+\./{print $2}' | tail -n 1
+}
 
 # Get xonsh reserved session.
-reserve_sess_id=$(screen -ls | grep -E 'xonsh_sess_reserve.*Detached' | awk -F '[.]|\t' '/[0-9]+\./{print $2}' | tail -n 1)
+reserve_sess_id=$(get_reserve_sess_id)
 
 if [[ -z "$reserve_sess_id" ]]; then
   # If reserved session is not found create one.
-  screen -S xonsh_sess_reserve -d -m "$xonsh_run"
-  reserve_sess_id=$(screen -ls | grep -E 'xonsh_sess_reserve.*Detached' | awk -F '[.]|\t' '/[0-9]+\./{print $2}' | tail -n 1)
+  screen -S xonsh_sess_reserve -d -m "${xonsh_run[@]}"
+  reserve_sess_id=$(get_reserve_sess_id)
 fi
 
 # Create new reserved xonsh session.
-screen -S xonsh_sess_reserve -d -m "$xonsh_run"
+screen -S xonsh_sess_reserve -d -m "${xonsh_run[@]}"
 
 # Mark grabbed session as active.
 screen -S "$reserve_sess_id" -X sessionname xonsh_sess_active
