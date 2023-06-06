@@ -23,11 +23,14 @@ chmod +x xonsh-screen-prewarmed
 ./xonsh-screen-prewarmed
 ```
 
-## Add another session manager
+### Get current Screen session ID
 
-Feel free to add another session manager (e.g. `tmux`, `zellij`) by creating `xonsh-<manager>-prewarmed`.
+```xsh
+env | grep STY
+# STY=71818
+```
 
-## GNU Screen cheatsheet
+### GNU Screen cheatsheet
 
 Basics:
 
@@ -36,3 +39,7 @@ Basics:
 * Run `screen -ls` to get list of all sessions. The `sess_id` is the number before dot.
 * Run `screen -r <sess_id>` to attach `Detached` session to the current terminal.
 * Run `screen -rd <sess_id>` to detach the `Attached` session and attach to the current terminal.
+
+## Add another session manager
+
+Feel free to add another session manager (e.g. `tmux`, `zellij`) by creating `xonsh-<manager>-prewarmed`.
