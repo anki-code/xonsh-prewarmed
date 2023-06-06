@@ -23,6 +23,15 @@ chmod +x xonsh-screen-prewarmed
 ./xonsh-screen-prewarmed
 ```
 
+### Detect that xonsh was prewarmed 
+
+Use `XONSH_PREWARMED` environment variable to detect that xonsh was prewarmed in `~/.xonshrc`:
+
+```xsh
+if __xonsh__.env.get('XONSH_PREWARMED', False):
+    print('This xonsh session was prewarmed!')
+```
+
 ### GNU Screen cheatsheet
 
 Basics:
