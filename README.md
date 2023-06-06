@@ -23,13 +23,6 @@ chmod +x xonsh-screen-prewarmed
 ./xonsh-screen-prewarmed
 ```
 
-### Get current Screen session ID
-
-```xsh
-env | grep STY
-# STY=71818
-```
-
 ### GNU Screen cheatsheet
 
 Basics:
@@ -39,6 +32,7 @@ Basics:
 * Run `screen -ls` to get list of all sessions. The `sess_id` is the number before dot.
 * Run `screen -r <sess_id>` to attach `Detached` session to the current terminal.
 * Run `screen -rd <sess_id>` to detach the `Attached` session and attach to the current terminal.
+* Run `env | grep STY` to get current `sess_id`.
 
 ## Add another session manager
 
