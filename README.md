@@ -10,27 +10,27 @@ If you like the idea click ⭐ on the repo and and <a href="https://twitter.com/
 
 On first run of `xonsh-prewarmed-*` script it creates additional reserved xonsh session in the background. On the next runs of the script it uses the reserved sessions and create new reserved sessions in the background. As result the speed of run the new interactive xonsh sessions is milliseconds.
 
-Supported screen managers:
-* [GNU Screen](https://www.gnu.org/software/screen/)
-* [Tmux](https://github.com/tmux/tmux/wiki)
-
 ## Installation
 
 ```xsh
-wget https://raw.githubusercontent.com/anki-code/xonsh-prewarmed/main/xonsh-prewarmed-screen
-wget https://raw.githubusercontent.com/anki-code/xonsh-prewarmed/main/xonsh-prewarmed-tmux
+git clone https://github.com/anki-code/xonsh-prewarmed
+cd xonsh-prewarmed
 chmod +x xonsh-prewarmed-*
 ```
 
 ## Usage
 
-GNU Screen:
+[GNU Screen](https://www.gnu.org/software/screen/):
 ```xsh
 ./xonsh-prewarmed-screen
 ```
-Tmux:
+[Tmux](https://github.com/tmux/tmux/wiki):
 ```xsh
 ./xonsh-prewarmed-tmux
+```
+[zellij](https://zellij.dev/):
+```xsh
+./xonsh-prewarmed-zellij
 ```
 
 ### Detect that xonsh was prewarmed 
@@ -43,6 +43,10 @@ if __xonsh__.env.get('XONSH_PREWARMED', False):
 ```
 
 ## Cheatsheet
+
+### Share history between sessions
+
+If you're using SQLite history backend in xonsh you can use `history pull` command to get history from other sessions.
 
 ### GNU Screen
 
